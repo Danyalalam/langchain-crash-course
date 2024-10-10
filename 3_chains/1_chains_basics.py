@@ -2,9 +2,16 @@ from dotenv import load_dotenv
 from langchain.prompts import ChatPromptTemplate
 from langchain.schema.output_parser import StrOutputParser
 from langchain_openai import ChatOpenAI
+from langchain_google_genai import GoogleGenerativeAI
 
 # Load environment variables from .env
 load_dotenv()
+
+
+#create a Google Generative AI model
+
+# model = GoogleGenerativeAI(model="gemini-1.5-pro")
+
 
 # Create a ChatOpenAI model
 model = ChatOpenAI(model="gpt-4o")
@@ -26,3 +33,7 @@ result = chain.invoke({"topic": "lawyers", "joke_count": 3})
 
 # Output
 print(result)
+
+
+
+
